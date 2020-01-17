@@ -9,7 +9,7 @@ The steps that follow assume you have Docker installed and running.
 STEPS
 =====
 
-1. Download Banana Dashboard repository and copy default.json file to the dashboard template directory,
+1. **From within the TwitterSentimentDocker Directory** - clone Banana Dashboard repository and copy default.json file to the dashboard template directory,
 
 ```
 git clone https://github.com/Lucidworks/banana && cp default.json banana/src/app/dashboards/
