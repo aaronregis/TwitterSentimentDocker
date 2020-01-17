@@ -50,4 +50,4 @@ Copy & paste the contents of **pyspark_script.py** into the Pyspark shell
 
 THAT'S IT!
 
-Open up your browser and goto **\<IP_Address_of_Docker_Host\>**:8983/banana to see your Twitter Sentiment Data visualized in the Banana Dasbhboard
+Open up your browser and goto **\<IP_Address_of_Docker_Host\>**:8983/banana to see your real-time streaming Twitter Sentiment Data visualized in the Banana Dasbhboard
