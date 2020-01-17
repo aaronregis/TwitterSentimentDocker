@@ -2,7 +2,7 @@
 
 /* Amend Datacenter name (DC1) accordingly and update Replication Factor (3) to correspond with your environment */
 
-CREATE KEYSPACE cassandratweet WITH replication = {'class': 'NetworkTopologyStrategy', 'DC1': '3'}  AND durable_writes = true;
+CREATE KEYSPACE cassandratweet WITH replication = {'class': 'NetworkTopologyStrategy', 'dc1': '1'}  AND durable_writes = true;
 
 CREATE TABLE cassandratweet.tweets_by_sentence (
     user_id text,
@@ -39,7 +39,7 @@ CREATE SEARCH INDEX ON cassandratweet.tag_sentiment  WITH COLUMNS * { docValues:
 
 /* Amend Datacenter name (DC1) accordingly and update Replication Factor (3) to correspond with your environment */
 
-CREATE KEYSPACE banana WITH replication = { 'class': 'NetworkTopologyStrategy', 'DC1': 3};
+CREATE KEYSPACE banana WITH replication = { 'class': 'NetworkTopologyStrategy', 'dc1': 1};
 
 CREATE TABLE banana.dashboards (
 id text PRIMARY KEY,
