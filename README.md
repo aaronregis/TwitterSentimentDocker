@@ -12,7 +12,7 @@ STEPS
 1. From within the **TwitterSentimentDocker** Directory - clone Banana Dashboard repository and copy default.json file to the dashboard template directory,
 
 ```
-git clone https://github.com/Lucidworks/banana && cp default.json banana/src/app/dashboards/
+git clone https://github.com/Lucidworks/banana && ( cp default.json banana/src/app/dashboards/ || echo "Did you run this command in the TwitterSentimentDocker directory?" )
 ```
 
 2. Download and Run DSE container,
