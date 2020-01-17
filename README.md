@@ -30,7 +30,7 @@ sudo docker exec -it my-dse bash cqlsh --file '/config/schema.cql'
 4. Build Python Twitter Streaming app container,
 
 ```
-sudo docker build -t aregis/twitterapi:1.0 ./TwitterSentimentDocker/
+sudo docker build -t aregis/twitterapi:1.0 .
 ```
 
 5. Start up Twitter Streaming app,
