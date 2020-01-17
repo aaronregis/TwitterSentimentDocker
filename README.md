@@ -9,16 +9,16 @@ The steps that follow assume you have Docker installed and running.
 STEPS
 =====
 
-1. Run setup script to create directory structure, download repositories and place relevent files in respective locations,
+1. Download Banana Dashboard repository and copy default.json file to the dashboard template directory,
 
 ```
-./setup.sh
+git clone https://github.com/Lucidworks/banana && cp default.json banana/src/app/dashboards/
 ```
 
 2. Download and Run DSE container,
 
 ```
-sudo docker run -p 9042:9042 -p 8983:8983 -v "$PWD"/dse/conf:/config -e DS_LICENSE=accept --name my-dse -d datastax/dse-server:6.7.7 -s -k -g
+sudo docker run -p 9042:9042 -p 8983:8983 -v "$PWD":/config -e DS_LICENSE=accept --name my-dse -d datastax/dse-server:6.7.7 -s -k -g
 ```
 
 3. Create CQL Schema,
@@ -33,10 +33,10 @@ sudo docker exec -it my-dse bash cqlsh --file '/config/TwitterSentiment/schema.c
 sudo docker build -t aregis/twitterapi:1.0 ./TwitterSentimentDocker/
 ```
 
-5. Start up Twitter Streaming app container,
+5. Start up Twitter Streaming app,
 
 ```
-sudo docker run -p 10002:10002 -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp aregis/twitterapi:1.0 python dse/conf/TwitterSentiment/stream_tweets_server.py --terms="brexit" --access-token="<ACCESS_TOKEN>" --access-secret="ACCESS_SECRET" --consumer-key="<CONSUMER_KEY>" --consumer-secret="<CONSUMER_SECRET>" --address=0.0.0.0 --port=10002
+sudo docker run -p 10002:10002 -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp aregis/twitterapi:1.0 python stream_tweets_server.py --terms="brexit" --access-token="<ACCESS_TOKEN>" --access-secret="ACCESS_SECRET" --consumer-key="<CONSUMER_KEY>" --consumer-secret="<CONSUMER_SECRET>" --address=0.0.0.0 --port=10002
 ```
 
 6. Connect to the Twitter Streaming app using DSE Pyspark to ingest tweets,
