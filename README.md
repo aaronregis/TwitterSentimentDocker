@@ -46,4 +46,4 @@ sudo docker exec -it my-dse bash
 dse pyspark
 ```
 
-Copy & Paster contents of **pyspark_script.py** into Pyspark shell
+Copy & paste the contents of **pyspark_script.py** into the Pyspark shell
