@@ -47,3 +47,7 @@ dse pyspark
 ```
 
 Copy & paste the contents of **pyspark_script.py** into the Pyspark shell
+
+THAT'S IT!
+
+Open up your browser and goto <IP Address of your docker Host>:8983/banana to see your Twitter Sentiment Data visualized in the Banana Dasbhboard
