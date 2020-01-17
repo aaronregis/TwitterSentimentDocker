@@ -142,7 +142,7 @@
 
       <Host name="localhost"  appBase="${solr.web.home}" unpackWARs="true" autoDeploy="true"
             errorReportValveClass="com.datastax.bdp.plugin.SolrErrorReportValve">
-	<Context docBase="/etc/dse/banana/src" path="/banana" />
+	<Context docBase="/config/banana/src" path="/banana" />
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
