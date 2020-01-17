@@ -24,7 +24,7 @@ sudo docker run -p 9042:9042 -p 8983:8983 -v "$PWD":/config -e DS_LICENSE=accept
 3. Create CQL Schema for Twitter data and Banana Dashboard,
 
 ```
-sudo docker exec -it my-dse bash cqlsh --file '/config/TwitterSentiment/schema.cql'
+sudo docker exec -it my-dse bash cqlsh --file '/config/schema.cql'
 ```
 
 4. Build Python Twitter Streaming app container,
