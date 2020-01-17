@@ -18,7 +18,7 @@ STEPS
 2. Download and Run DSE container,
 
 ```
-sudo docker run -p 9042:9042 -p 8983:8983 -v /home/ds_user/dse/conf:/config -e DS_LICENSE=accept --name my-dse -d datastax/dse-server:6.7.7 -s -k -g
+sudo docker run -p 9042:9042 -p 8983:8983 -v "$PWD"/dse/conf:/config -e DS_LICENSE=accept --name my-dse -d datastax/dse-server:6.7.7 -s -k -g
 ```
 
 3. Create CQL Schema,
