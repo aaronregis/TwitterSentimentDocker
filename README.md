@@ -53,18 +53,22 @@ THAT'S IT!
 Open up your browser and goto **\<IP_Address_of_Docker_Host\>**:8983/banana to see your real-time streaming Twitter Sentiment Data visualized in the Banana Dasbhboard
 
 
-Utilizing DSE Graph
-===================
+Visualising in DSE Graph
+========================
 
-1. Create Graph schema
+1. Create session on DSE container,
 
+```sudo docker exec -it my-dse bash```
+
+2. Execute Graph schema creation script,
+ 
 ```dse gremlin-console -e /config/graph.schema```
 
-2. Load Cassandra data into Graph structure
+3. Load Cassandra data into Graph structure,
 
 ```dse spark -i /config/scala_loadgraph_script.txt```
 
-3. Startup DSE Studio 
+4. Startup DSE Studio,
 
 ```sudo docker run -e DS_LICENSE=accept --link my-dse --name my-studio -p 9091:9091 -d datastax/dse-studio:6.7.0```
 
