@@ -74,4 +74,4 @@ Visualising in DSE Graph
 
 ```sudo docker run -e DS_LICENSE=accept --link my-dse --name my-studio -p 9091:9091 -d datastax/dse-studio:6.7.0```
 
-To access the graph goto <DOCKER_HOST_IP>:9091 in your browser. In "Connections" update the default connection to have the IP of the DSE container (i.e 172.17.0.2) and create a new Notebook with "twittergraph" chosen from the drop down list of graphs.
+To access the graph goto <DOCKER_HOST_IP>:9091 in your browser. Once inside DSE Studio goto "Connections" tab and update the default connection to have the IP of the DSE container (i.e 172.17.0.2) and create a new Notebook with "twittergraph" chosen from the drop down list of graphs.
