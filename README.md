@@ -51,3 +51,21 @@ Copy & paste the contents of **pyspark_script.py** into the Pyspark shell
 THAT'S IT!
 
 Open up your browser and goto **\<IP_Address_of_Docker_Host\>**:8983/banana to see your real-time streaming Twitter Sentiment Data visualized in the Banana Dasbhboard
+
+
+Utilizing DSE Graph
+===================
+
+1. Create Graph schema
+
+```dse gremlin-console -e /config/graph.schema```
+
+2. Load Cassandra data into Graph structure
+
+```dse spark -i /config/scala_loadgraph_script.txt```
+
+3. Startup DSE Studio 
+
+```sudo docker run -e DS_LICENSE=accept --link my-dse --name my-studio -p 9091:9091 -d datastax/dse-studio:6.7.0```
+
+To access the graph goto <IP_ADDRESS>:9091 in your browser. Update the connection to have the IP of the DSE container (i.e 172.17.0.2) and create a new Notebook with "twittergraph" chosen from the drop down list of graphs.
