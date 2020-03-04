@@ -21,7 +21,7 @@ git clone https://github.com/Lucidworks/banana && ( cp default.json banana/src/a
 sudo docker run -p 9042:9042 -p 8983:8983 -v "$PWD":/config -e DS_LICENSE=accept --name my-dse -d datastax/dse-server:6.7.7 -s -k -g
 ```
 
-3. Create CQL Schema for Twitter data and Banana Dashboard (NOTE: You may need to wait a short while for DSE to start up),
+3. Create CQL Schema for Twitter data and Banana Dashboard (**NOTE:** You may need to wait a short while for DSE to start up),
 
 ```
 sudo docker exec -it my-dse bash cqlsh --file '/config/schema.cql'
@@ -33,7 +33,7 @@ sudo docker exec -it my-dse bash cqlsh --file '/config/schema.cql'
 sudo docker build -t aregis/twitterapi:1.0 .
 ```
 
-5. Start up Twitter Streaming app (**NOTE:** You will need to substitute in your own unique values for the Token and Key pairings in the command below. Goto https://developer.twitter.com/en/docs/basics/developer-portal/overview for more information),
+5. Start up Twitter Streaming app (**NOTE:** You will need to substitute in your own unique values for the Token and Key pairings in the command below. Goto https://developer.twitter.com/en/docs/basics/developer-portal/overview for more information on generating them),
 
 ```
 sudo docker run -p 10002:10002 -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp aregis/twitterapi:1.0 python stream_tweets_server.py --terms="brexit" --access-token="<ACCESS_TOKEN>" --access-secret="<ACCESS_SECRET>" --consumer-key="<CONSUMER_KEY>" --consumer-secret="<CONSUMER_SECRET>" --address=0.0.0.0 --port=10002
