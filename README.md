@@ -21,7 +21,7 @@ git clone https://github.com/Lucidworks/banana && ( cp default.json banana/src/a
 sudo docker run -p 9042:9042 -p 8983:8983 -v "$PWD":/config -e DS_LICENSE=accept --name my-dse -d datastax/dse-server:6.7.7 -s -k -g
 ```
 
-3. Create CQL Schema for Twitter data and Banana Dashboard,
+3. Create CQL Schema for Twitter data and Banana Dashboard (NOTE: You may need to wait a short while for DSE to start up),
 
 ```
 sudo docker exec -it my-dse bash cqlsh --file '/config/schema.cql'
